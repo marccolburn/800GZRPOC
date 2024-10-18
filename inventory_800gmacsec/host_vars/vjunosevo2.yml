@@ -1,0 +1,48 @@
+---
+interfaces:
+  - name: "et-0/0/0"
+    description: "toPTX1et0_0_0"
+    unit: "0"
+    ipv4:
+      - address: "10.12.0.1/31"
+    type: "p2p"
+  - name: "et-0/0/1"
+    description: "toPTX1et0_0_0"
+    unit: "0"
+    ipv4:
+      - address: "10.12.1.1/31"
+    type: "p2p"
+  - name: "et-0/0/2"
+    description: "toTestSet"
+    unit: "0"
+    ipv4:
+      - address: "10.20.2.1/24"
+    type: "p2p"
+  - name: "lo0"
+    description: "loopback"
+    unit: "0"
+    ipv4:
+      - address: "2.2.2.2/32"
+    type: "loop"
+
+physical_interfaces: "{{ interfaces }}"
+logical_interfaces: "{{ interfaces }}"
+isis_interfaces: "{{ interfaces }}"
+isis_settings:
+  loopback_unit: "0"
+  loopback_clns_address: "49.0001.0002.0002.0002.0002.00"
+  level1_disable: True
+isis_wide_metrics: True
+
+zr_interfaces:
+  - name: "et-0/0/0"
+    wavelength: "1554.13"
+
+macsec_cas:
+  - name: "CA1"
+    security_mode: "static-cak"
+    cipher: "gcm-aes-256"
+    ckn: "847ebcfb9ba54723beded2d736fed7c326847619e72439096f9e95c41414d3a2"
+    cak: "4dfb9a53e89b1a93f6a650b3b55b5838"
+    interfaces:
+      - name: "et-0/0/1"

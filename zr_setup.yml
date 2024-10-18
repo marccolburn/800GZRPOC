@@ -1,0 +1,12 @@
+---
+- name: "Configure ZR wavelength"
+  hosts: "ptxrouters"
+  gather_facts: False
+  vars_files:
+    - "lab_vars.yml"
+  pre_tasks:
+    - name: "Configure ZR wavelength on interface"
+      junos_config:
+        lines:
+          - "set interfaces {{ item.name }} optics-options wavelength {{ item.wavelength }}"
+      loop: "{{ zr_interfaces }}"

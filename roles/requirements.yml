@@ -1,0 +1,9 @@
+---
+- src: "git@github.com:marccolburn/network_interface_configuration.git"
+  scm: "git"
+- src: "git@github.com:marccolburn/junos_isis_config.git"
+  scm: "git"
+- src: "git@github.com:marccolburn/junos_macsec_config.git"
+  scm: "git"
+- src: "git@github.com:marccolburn/junos_static_routes.git"
+  scm: "git"

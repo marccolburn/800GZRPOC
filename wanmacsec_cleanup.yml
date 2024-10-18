@@ -1,0 +1,21 @@
+---
+- name: "Remove WAN MACsec Interfaces"
+  hosts: "ptxrouters"
+  gather_facts: False
+  vars_files:
+    - "lab_vars.yml"
+  roles:
+    - role: "junos_isis_config"
+      tags: isis
+      vars:
+        isis_remove: True
+    - role: "junos_macsec_config"
+      tags: macsec
+      vars:
+        macsec_remove: True
+  post_tasks:
+    - name: "Delete et-0/0/1 and static routes"
+      junos_config:
+        lines:
+          - "delete interfaces et-0/0/1"
+          - "delete routing-options static"

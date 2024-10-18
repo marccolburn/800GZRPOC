@@ -1,0 +1,4 @@
+venv/
+roles/*
+!roles/requirements.yml
+debug_configs/

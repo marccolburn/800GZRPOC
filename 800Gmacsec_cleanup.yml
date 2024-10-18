@@ -1,0 +1,13 @@
+---
+- name: "Initial Configuration Push"
+  hosts: "ptxrouters"
+  gather_facts: False
+  vars_files:
+    - "lab_vars_cleanup.yml"
+  roles:
+    - role: "network_interface_configuration"
+      tags: "interfaces"
+    - role: "junos_isis_config"
+      tags: "isis"
+    - role: "junos_macsec_config"
+      tags: "macsec"

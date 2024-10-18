@@ -1,0 +1,1 @@
+show interfaces transport pm optics current et-0/0/0

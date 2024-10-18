@@ -1,0 +1,3 @@
+isis_remove: True
+static_remove: True
+macsec_remove: True
