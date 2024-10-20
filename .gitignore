@@ -2,3 +2,6 @@ venv/
 roles/*
 !roles/requirements.yml
 debug_configs/
+poc_inventory/
+poc_inventory_800gmacsec
+poc_inventory_wanmacsec
