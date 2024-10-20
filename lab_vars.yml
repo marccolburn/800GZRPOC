@@ -1,3 +1,4 @@
 isis_remove: False
 static_remove: False
 macsec_remove: False
+macsec_interface: "et-0/0/24"

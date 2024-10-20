@@ -14,8 +14,8 @@
       vars:
         macsec_remove: True
   post_tasks:
-    - name: "Delete et-0/0/1 and static routes"
+    - name: "Delete {{ macsec_interface }} and static routes"
       junos_config:
         lines:
-          - "delete interfaces et-0/0/1"
+          - "delete interfaces {{ macsec_interface }}"
           - "delete routing-options static"

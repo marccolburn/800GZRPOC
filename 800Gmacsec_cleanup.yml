@@ -11,3 +11,8 @@
       tags: "isis"
     - role: "junos_macsec_config"
       tags: "macsec"
+  post_tasks:
+    - name: "Remove {{ macsec_interface }} configuration"
+      junos_config:
+        lines:
+          - "delete interfaces {{ macsec_interface }} unit 0"
