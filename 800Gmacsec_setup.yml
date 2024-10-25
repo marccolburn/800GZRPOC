@@ -11,3 +11,8 @@
       tags: "isis"
     - role: "junos_macsec_config"
       tags: "macsec"
+  post_tasks:
+    - name: "Shutdown ZR link"
+      junos_config:
+        lines:
+          - "set interfaces et-0/0/0 disable"

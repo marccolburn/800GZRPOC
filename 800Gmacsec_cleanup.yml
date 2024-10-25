@@ -16,3 +16,4 @@
       junos_config:
         lines:
           - "delete interfaces {{ macsec_interface }} unit 0"
+          - "delete interfaces et-0/0/0 disable"
