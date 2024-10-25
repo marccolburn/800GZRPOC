@@ -19,3 +19,4 @@
         lines:
           - "delete interfaces {{ macsec_interface }}"
           - "delete routing-options static"
+          - "delete interfaces et-0/0/0 disable"
